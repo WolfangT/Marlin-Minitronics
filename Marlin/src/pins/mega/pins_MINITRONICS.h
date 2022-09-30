@@ -31,7 +31,7 @@
  *  Added pin definitions for M3, M4 & M5 spindle control commands
  */
 
-#if NOT_TARGET(__AVR_ATmega1281__)
+#if NOT_TARGET(__AVR_ATmega1280__)
   #error "Oops! Select 'Minitronics' in 'Tools > Board.'"
 #elif HOTENDS > 2 || E_STEPPERS > 2
   #error "Minitronics supports up to 2 hotends / E steppers."
@@ -81,9 +81,13 @@
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN                           7  // EXTRUDER 1
-#define HEATER_1_PIN                           8  // EXTRUDER 2
-#define HEATER_BED_PIN                         3  // BED
+// MOD: HB fuse burned, use extruder 2 for 1, and enxtruder 1 for bed
+// #define HEATER_0_PIN                           7  // EXTRUDER 1
+// #define HEATER_1_PIN                           8  // EXTRUDER 2
+// #define HEATER_BED_PIN                         3  // BED
+#define HEATER_0_PIN                           8  // EXTRUDER 1
+#define HEATER_1_PIN                           -1  // EXTRUDER 2
+#define HEATER_BED_PIN                         7  // BED
 
 #ifndef FAN_PIN
   #define FAN_PIN                              9
