@@ -26,13 +26,23 @@
  */
 
 /**
+ * 
  * Rev B   2 JAN 2017
  *
  *  Added pin definitions for M3, M4 & M5 spindle control commands
  */
 
+/**
+ * Modifications on 30 Sep 2022
+ * For use with platformio on env atmega1280
+ * based on atmega 1280 pinout https://camo.githubusercontent.com/90c3301e9f9d2e07269f15f89ee823ea1ae3dca96e9b7d3e73a6a4d8d626c2b8/68747470733a2f2f692e696d6775722e636f6d2f4f37577457416a2e6a7067
+ * and https://reprap.org/mediawiki/images/b/b6/MinitronicsPDF.zip
+ * but NOT on http://reprapworld.com/datasheets/datasheet%20minitronics%20v1.pdf Pin Defition
+ */
+
 #if NOT_TARGET(__AVR_ATmega1280__)
   #error "Oops! Select 'Minitronics' in 'Tools > Board.'"
+#define E0_DIR_PIN                            44
 #elif HOTENDS > 2 || E_STEPPERS > 2
   #error "Minitronics supports up to 2 hotends / E steppers."
 #endif
@@ -42,34 +52,34 @@
 // Limit Switches
 //
 #define X_MIN_PIN                              5
-#define X_MAX_PIN                              2
+#define X_MAX_PIN                             -1
 #define Y_MIN_PIN                              2
-#define Y_MAX_PIN                             15
-#define Z_MIN_PIN                              6
+#define Y_MAX_PIN                             -1
+#define Z_MIN_PIN                             10
 #define Z_MAX_PIN                             -1
 
 //
 // Steppers
 //
-#define X_STEP_PIN                            48
-#define X_DIR_PIN                             47
-#define X_ENABLE_PIN                          49
+#define X_DIR_PIN                             55
+#define X_STEP_PIN                            56
+#define X_ENABLE_PIN                          57
 
-#define Y_STEP_PIN                            39  // A6
-#define Y_DIR_PIN                             40  // A0
-#define Y_ENABLE_PIN                          38
+#define Y_ENABLE_PIN                          22
+#define Y_STEP_PIN                            23
+#define Y_DIR_PIN                             24
 
-#define Z_STEP_PIN                            42  // A2
-#define Z_DIR_PIN                             43  // A6
-#define Z_ENABLE_PIN                          41  // A1
+#define Z_ENABLE_PIN                          25
+#define Z_STEP_PIN                            26
+#define Z_DIR_PIN                             27
 
-#define E0_STEP_PIN                           45
-#define E0_DIR_PIN                            44
-#define E0_ENABLE_PIN                         27
+#define E0_DIR_PIN                            28
+#define E0_STEP_PIN                           29
+#define E0_ENABLE_PIN                         39
 
-#define E1_STEP_PIN                           36
-#define E1_DIR_PIN                            35
-#define E1_ENABLE_PIN                         37
+#define E1_DIR_PIN                            30
+#define E1_STEP_PIN                           31
+#define E1_ENABLE_PIN                         32
 
 //
 // Temperature Sensors
@@ -82,22 +92,22 @@
 // Heaters / Fans
 //
 // MOD: HB fuse burned, use extruder 2 for 1, and enxtruder 1 for bed
-// #define HEATER_0_PIN                           7  // EXTRUDER 1
-// #define HEATER_1_PIN                           8  // EXTRUDER 2
+// #define HEATER_0_PIN                           11 // EXTRUDER 1
+// #define HEATER_1_PIN                           12 // EXTRUDER 2
 // #define HEATER_BED_PIN                         3  // BED
-#define HEATER_0_PIN                           8  // EXTRUDER 1
-#define HEATER_1_PIN                           -1  // EXTRUDER 2
-#define HEATER_BED_PIN                         7  // BED
+#define HEATER_0_PIN                           12 // EXTRUDER 1
+#define HEATER_1_PIN                           3  // EXTRUDER 2
+#define HEATER_BED_PIN                         11 // BED
 
 #ifndef FAN_PIN
-  #define FAN_PIN                              9
+  #define FAN_PIN                              13
 #endif
 
 //
 // Misc. Functions
 //
-#define SDSS                                  16
-#define LED_PIN                               46
+#define SDSS                                  -1
+#define LED_PIN                               54
 
 //
 // LCD / Controller
