@@ -535,7 +535,7 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  *
  */
-#define TEMP_SENSOR_0 1000
+#define TEMP_SENSOR_0 990
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -666,9 +666,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  18.93
-    #define DEFAULT_Ki   1.64
-    #define DEFAULT_Kd  54.65
+    #define DEFAULT_Kp 27.88
+    #define DEFAULT_Ki 2.04
+    #define DEFAULT_Kd 95.37
   #endif
 #endif
 
