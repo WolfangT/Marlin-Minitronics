@@ -42,12 +42,13 @@
 
 #if NOT_TARGET(__AVR_ATmega1280__)
   #error "Oops! Select 'Minitronics' in 'Tools > Board.'"
-#define E0_DIR_PIN                            44
 #elif HOTENDS > 2 || E_STEPPERS > 2
   #error "Minitronics supports up to 2 hotends / E steppers."
 #endif
 
 #define BOARD_INFO_NAME "Minitronics v1.0/1.1"
+#define DEFAULT_MACHINE_NAME "Minitronics"
+
 //
 // Limit Switches
 //
@@ -95,13 +96,10 @@
 // #define HEATER_0_PIN                           11 // EXTRUDER 1
 // #define HEATER_1_PIN                           12 // EXTRUDER 2
 // #define HEATER_BED_PIN                         3  // BED
-#define HEATER_0_PIN                           12 // EXTRUDER 1
-#define HEATER_1_PIN                           3  // EXTRUDER 2
-#define HEATER_BED_PIN                         11 // BED
-
-#ifndef FAN_PIN
-  #define FAN_PIN                              13
-#endif
+#define E0_AUTO_FAN_PIN                        13 // Extruder 1 heat break fan
+#define HEATER_0_PIN                           12 // Extruder 1
+#define HEATER_BED_PIN                         11 // Bed
+#define FAN_PIN                                3  // Extruder 2 // damaged
 
 //
 // Misc. Functions
