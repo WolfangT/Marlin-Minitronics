@@ -92,14 +92,12 @@
 //
 // Heaters / Fans
 //
-// MOD: HB fuse burned, use extruder 2 for 1, and enxtruder 1 for bed
-// #define HEATER_0_PIN                           11 // EXTRUDER 1
-// #define HEATER_1_PIN                           12 // EXTRUDER 2
-// #define HEATER_BED_PIN                         3  // BED
-#define E0_AUTO_FAN_PIN                        13 // Extruder 1 heat break fan
-#define HEATER_0_PIN                           12 // Extruder 1
-#define HEATER_BED_PIN                         11 // Bed
-#define FAN_PIN                                3  // Extruder 2 // damaged
+// MOD: usign external driver for HB, so using the bigger FET for extruder heater
+// this are the top screw headers from left to right
+#define FAN_PIN                                  13 // Cooling part fan
+#define E0_AUTO_FAN_PIN                          12 // Extruder 1 heat break fan
+#define HEATER_BED_PIN                           11 // Bed
+#define HEATER_0_PIN                             3  // Extruder 1
 
 //
 // Misc. Functions
