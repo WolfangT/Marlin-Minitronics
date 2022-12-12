@@ -1696,16 +1696,16 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 165
-#define Y_BED_SIZE 195
+#define X_BED_SIZE 200
+#define Y_BED_SIZE 200
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -40
-#define Y_MIN_POS -20
+#define X_MIN_POS -10
+#define Y_MIN_POS -15
 #define Z_MIN_POS 0
-#define X_MAX_POS 210
-#define Y_MAX_POS 240
-#define Z_MAX_POS 200
+#define X_MAX_POS 240
+#define Y_MAX_POS 245
+#define Z_MAX_POS 150
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -2237,7 +2237,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-//#define NOZZLE_PARK_FEATURE
+#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
