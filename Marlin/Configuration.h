@@ -535,7 +535,7 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  *
  */
-#define TEMP_SENSOR_0 990
+#define TEMP_SENSOR_0 1
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -666,9 +666,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 27.88
-    #define DEFAULT_Ki 2.04
-    #define DEFAULT_Kd 95.37
+    #define DEFAULT_Kp 28.82
+    #define DEFAULT_Ki 2.41
+    #define DEFAULT_Kd 86.18
   #endif
 #endif
 
@@ -1170,14 +1170,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 500, 187}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 8000, 187}
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 50, 50, 4, 10 }
+#define DEFAULT_MAX_FEEDRATE          { 15, 15, 3, 3 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
